@@ -44,29 +44,42 @@ It is a normalized exponential function that takes the real numbers and provides
 It decides how many times the negative grandient step needs to be taken for each update during gradient descent. We can change the LR at different steps of training by using LRScheduler or ReduceLROnPlatau or CyclicLR. Generally learning rate is kept at a low number for better convergence. 
 
 ## 1x1 Convolutions
+Famously called as "Antman", it is pretty effective when there is a need to increase or decrease number of channels without doing convolution and hence computationally effective. In most of the cases it used to reduce number of channels unless there is a specific need to increase. While reducing the number of channels 1x1 enables to model to combine the channels to come up with most dominant ones.
 
 ## Kernels and how do we decide the number of kernels?
+Kernels are feature extractors, like vertical and horizental edge detectors. Depending the upon the values and their corresponding positions in the kernel matrix, relevant features are extracted from the input image. During backpropagation the model determines the values of kernels so as to extract dominant features. Although there is no specific rule to provide exact number of kernels required for a particular dataset, however the rule of thumb is to add more number kernels if the images are complex to classify.
 
 ## Batch Normalization
+Within a network, output from a layer becomes the input for the next layer. A change in the distribution of such input, coming from activations from previous layer, results in inappropriate updates in the weights. A batch normalization makes the input a stable distribution that in turn results in accelarated learning of the network.
 
 ## Position of MaxPooling
+Max Pooling reduces the spatial dimension by half. Hence it is a good approach to apply max pooling at least after 4-6 initial convolution layers so that the model learns better patterns. 
 
 ## Concept of Transition Layers
+Transition layer is also called as bottleneck layers. The idea is to gradually increase the number of channels within each block and reduce it before the start of the next block. This enables the network to combine and retain only dominant channels at each block resulting in better accuracy.
 
 ## Position of Transition Layer
+The transition layer is put just before the max pooling at each block. This ensures at lease dominant channels are selected before lossing some spatial information through max pooling.
 
 ## The distance of MaxPooling from Prediction
+Max pooling should not be applied towards the end of the network. It should be followed by at least a few convolution layers before prediction.
 
 ## The distance of Batch Normalization from Prediction
+Batch normalization should not be present after the last convolution layer. The idea is to retain the activation outputs as those are so that they can be very well separated/differenciated by softmax layer.
 
 ## DropOut
+Adding dropout layer initializes some of the weights with zero randomly. This in turn makes the network more generalized resulting in reduced training accuracy. However during the prediction all of the neurons are active hence that results in better test accuracy.
 
 ## When do we introduce DropOut, or when do we know we have some overfitting
+When training accuracy is pretty high and validation accuracy is low and no more improving with further epochs, we can introduce dropout.
 
 ## When do we stop convolutions and go ahead with a larger kernel or some other alternative (which we have not yet covered)
+This is purely a guess. I think when we not so focused on the local spatial features rather a general view of the objects in the images for detection purpose.
 
 ## When to add validation checks
+It is a good practice to add during the training itself to see how the model is converging.
 
 ## LR schedule and concept behind it
+
 
 ## Adam vs SGD
