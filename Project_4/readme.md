@@ -32,13 +32,16 @@ Instead of directly convoluting the image with intended size of kernel (like 5x5
 When all other ideal network design related requirements are fulfilled, having more number of layers generally result in better accuracy. However we generally add layers judiciously till we reach the receptive field close to that of the object in the image. If we need our model to learn the background as well because of its significance, then we can add more layers while ensuring that the receptive field size is equal or a little more than that of the image.
 
 ## MaxPooling
-
+Pooling helps to reduce the spatial dimension of an image. Among all the pooling techniques, Max Pooling is the most popular one. Generally it is of size 2x2 and operates with stride value of 2. It takes the max value from the portion it operates on and puts that in the feature map. When with max pooling the spatial dimension gets reduced by half, the effective global receptive field is doubled.
 
 ## Receptive Field
+A receptive field (considering global receptive field) is the effective dimension of input that the convolutional layer looks at. With more number of convolution layers as the spatial dimension reduces the effective receptive field size increases. To can calculate the difference between the input size and remaining spatial dimension to get the receptive field size at a particular layer when convolution has been done with zero padding.
 
 ## SoftMax
+It is a normalized exponential function that takes the real numbers and provides with probability like score. It must not be considered as probability of the class labels. Rather it is an exponentially caliberated score for each class outcome for better differeciation.
 
 ## Learning Rate
+It decides how many times the negative grandient step needs to be taken for each update during gradient descent. We can change the LR at different steps of training by using LRScheduler or ReduceLROnPlatau or CyclicLR. Generally learning rate is kept at a low number for better convergence. 
 
 ## 1x1 Convolutions
 
