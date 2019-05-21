@@ -83,4 +83,8 @@ It is a good practice to add during the training itself to see how the model is 
 Reducing learning rate during the training process leads to better performance and reduced training time. The idea is to take smaller gradient steps as the model approaches the local minima. It is called as learning rate annealing as well and LR schedule is one of the approches. We can either keep updating the learning rate with number of epochs or we can change it after a certain number of epochs periodically. 
 
 ## Adam vs SGD
+Adam use a combination of squared grandient of RMSProp and weighted average of gradients. It leverages adaprive learning rate to find individual learning rate for each parameter.  
+
+SGD is a variant of gradient descent that updates the weights after each batch.  
+
 There are two metrics to decide the efficacy of an optimizer: Speed of convergence and regularization for better accuracy. Adam is faster than SGD for convergence however SGD is better than Adam for when it comes to regularization.
