@@ -8,5 +8,5 @@ Receptive Field Formula:
 Architecture Table:
 ![Alt](https://github.com/BPrasad123/EVA_Projects/blob/master/Project_7/Architecture%20Table.JPG)  
 
-Architecture Diagram:
+Architecture Diagram:  
 ![Alt](https://github.com/BPrasad123/EVA_Projects/blob/master/Project_7/Architecture%20Diagram.JPG)
