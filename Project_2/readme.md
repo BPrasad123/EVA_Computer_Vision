@@ -1,1 +1,1 @@
-Uploaded the submission files for assignment 2.
+Added description for each code block in the notebook.
